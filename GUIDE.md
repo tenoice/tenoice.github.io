@@ -418,6 +418,7 @@ En dernier recours : **Ctrl + Z** dans ton éditeur pour annuler tes dernières 
 
 **Je ne vois pas mes modifications**
 Enregistre le fichier (Ctrl + S), puis **Ctrl + F5** dans le navigateur (rechargement complet). En ligne, attends 1 à 2 minutes après l'envoi.
+Les navigateurs gardent les fichiers du site en mémoire jusqu'à 10 minutes. Pour forcer tous les visiteurs à recharger tout de suite, les pages HTML appellent les fichiers avec un numéro de version (`style.css?v=20261101-2`) : il suffit de changer ce numéro dans toutes les pages (je le fais à chaque mise en ligne).
 
 **Le modèle 3D ne s'affiche pas sur mon PC**
 C'est normal en double-cliquant sur `index.html` : utilise Live Server (section 2). En ligne, cela fonctionne.
