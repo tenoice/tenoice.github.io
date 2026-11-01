@@ -65,10 +65,10 @@ window.PROJECTS = [
   {
     slug: "neytiri",
     title: "Neytiri",
-    category: ["Character", "Groom"],
+    category: ["Character", "Groom", "Personal"],
     year: 2026,                               // à vérifier
     featured: true,
-    // context: "School project — ARTFX",     // à compléter : école ou perso ?
+    context: { en: "Personal project", fr: "Projet personnel" },
     role: { en: "Sculpt, texturing, groom, compositing", fr: "Sculpt, texturing, groom, compositing" },
     software: ["Maya", "ZBrush", "Substance 3D Painter", "Yeti", "Arnold", "Nuke"],   // à vérifier
     description: {

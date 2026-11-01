@@ -41,6 +41,7 @@ window.SITE = {
     { name: "DaVinci Resolve",      icon: "assets/images/tools/davinci-resolve.png" },
     { name: "Yeti",                 icon: "assets/images/tools/yeti.png" },
     { name: "Arnold",               icon: "assets/images/tools/arnold.png" },
+    { name: "Houdini",              icon: "assets/images/tools/houdini.svg" },
   ],
 
   /* ---------- Réseaux (ordre = ordre d'affichage) ---------- */
@@ -93,7 +94,7 @@ window.SITE = {
       en: ["Character modeling & sculpting", "Grooming — hair, fur, facial hair", "Texturing & lookdev", "Retopology & UVs", "Lighting & rendering", "Full 3D pipeline"],
       fr: ["Modélisation & sculpture de personnages", "Groom — cheveux, fourrure, pilosité", "Texturing & lookdev", "Retopologie & UVs", "Éclairage & rendu", "Pipeline 3D complet"],
     },
-    software: ["Maya", "ZBrush", "Substance 3D Painter", "Yeti", "Blender", "Arnold", "Nuke", "DaVinci Resolve"],
+    software: ["Maya", "ZBrush", "Substance 3D Painter", "Yeti", "Houdini", "Blender", "Arnold", "Nuke", "DaVinci Resolve"],
     languages: { en: "French (native), English (professional)", fr: "Français (natif), anglais (professionnel)" },
     cv: "assets/cv/Lorenzo-Brundidia-CV.pdf",
   },
@@ -135,6 +136,7 @@ window.SITE = {
       compare_before: "Before", compare_after: "After", compare_label: "Before / after comparison",
       open_image: "Open image fullscreen", back_top: "Back to top", rights: "All rights reserved",
       lang_label: "Language", page_404: "This page wandered off.", home: "Back home",
+      legal_nav: "Legal", legal_link: "Legal notice & privacy", terms_link: "Terms of use", updated: "Last updated",
     },
     fr: {
       nav_work: "Projets", nav_about: "À propos", nav_contact: "Contact", menu: "Menu", close: "Fermer",
@@ -159,6 +161,7 @@ window.SITE = {
       compare_before: "Avant", compare_after: "Après", compare_label: "Comparaison avant / après",
       open_image: "Ouvrir l'image en plein écran", back_top: "Haut de page", rights: "Tous droits réservés",
       lang_label: "Langue", page_404: "Cette page s'est égarée.", home: "Retour à l'accueil",
+      legal_nav: "Informations légales", legal_link: "Mentions légales & confidentialité", terms_link: "Conditions d'utilisation", updated: "Dernière mise à jour",
     },
   },
 };

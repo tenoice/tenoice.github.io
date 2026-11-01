@@ -1,12 +1,19 @@
 /* =====================================================================
    STYLE.CSS — l'apparence du site.
    Tu n'as besoin de toucher qu'aux deux blocs du haut :
-   1) les polices (ligne @import)   2) les couleurs (:root)
+   1) les polices (bloc @font-face)   2) les couleurs (:root)
    ===================================================================== */
 
-/* 1) POLICES — Google Fonts. Pour changer : choisis sur fonts.google.com,
-      remplace l'URL ci-dessous, puis les noms dans --font-display / --font-body. */
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Geist+Mono:wght@400;500&display=swap");
+/* 1) POLICES — hébergées sur le site (dossier assets/fonts), sans appel à Google :
+      aucune donnée de visiteur n'est envoyée à un tiers (RGPD). Voir GUIDE.md pour en changer. */
+@font-face { font-family: "Anton"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/anton-latin-ext0.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Anton"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/anton-latin1.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 300 800; font-display: swap; src: url("../assets/fonts/bricolage-grotesque-latin-ext2.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 300 800; font-display: swap; src: url("../assets/fonts/bricolage-grotesque-latin3.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Geist Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/geist-mono-latin-ext4.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Geist Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/geist-mono-latin5.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Geist Mono"; font-style: normal; font-weight: 500; font-display: swap; src: url("../assets/fonts/geist-mono-latin-ext4.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Geist Mono"; font-style: normal; font-weight: 500; font-display: swap; src: url("../assets/fonts/geist-mono-latin5.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 /* 2) COULEURS & RÉGLAGES */
 :root {
@@ -182,6 +189,7 @@ main:focus { outline: none; }
   padding-block: 1.5rem 2rem; border-top: 1px solid var(--line);
 }
 .site-footer__bottom a:hover { color: var(--text); }
+.site-footer__legal { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
 @media (max-width: 760px) { .site-footer__top { grid-template-columns: 1fr; } }
 
 /* ---------------------------------------------------------------------
@@ -323,6 +331,15 @@ main:focus { outline: none; }
 .page-head { padding-top: clamp(2.5rem, 7vw, 6rem); padding-bottom: clamp(2rem, 5vw, 4rem); }
 .page-head__title { font-size: clamp(4rem, 13vw, 12rem); }
 .page-head__title sup { font: 500 .9rem/1 var(--font-mono); color: var(--accent); vertical-align: top; margin-left: .4em; letter-spacing: 0; }
+.page-head__title--small { font-size: clamp(2.4rem, 6.5vw, 6rem); max-width: 16ch; }
+
+/* Pages légales */
+.legal__section { display: grid; grid-template-columns: 1fr 2fr; gap: 1rem 2rem; padding-block: 2.25rem; border-top: 1px solid var(--line); }
+.legal__title { font: 700 clamp(1.3rem, 2vw, 1.7rem)/1.15 var(--font-display); letter-spacing: -.02em; }
+.legal__title .eyebrow { display: block; margin-bottom: .6rem; }
+.legal .prose { color: var(--muted); }
+.legal .prose a { color: var(--text); word-break: break-word; }
+@media (max-width: 760px) { .legal__section { grid-template-columns: 1fr; } }
 
 /* Filtres */
 .filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: clamp(2rem, 4vw, 3rem); }

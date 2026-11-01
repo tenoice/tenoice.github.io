@@ -1,0 +1,9 @@
+Polices utilisées sur ce site — toutes distribuées sous licence SIL Open Font License 1.1
+(texte complet : https://openfontlicense.org/open-font-license-official-text/)
+
+- Anton — Copyright The Anton Project Authors (Vernon Adams)
+- Bricolage Grotesque — Copyright The Bricolage Grotesque Project Authors (Mathieu Triay)
+- Geist Mono — Copyright Vercel, in collaboration with basement.studio
+
+Fichiers obtenus via Google Fonts (sous-ensembles latin et latin-ext), hébergés localement
+pour qu'aucune donnée de visiteur ne soit transmise à un tiers.

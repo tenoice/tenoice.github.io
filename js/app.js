@@ -146,7 +146,10 @@
         </div>
         <div class="site-footer__bottom eyebrow">
           <span>© ${new Date().getFullYear()} ${esc(SITE.name)} — ${esc(ui("rights"))}</span>
-          <span>${esc(SITE.location)}</span>
+          <nav class="site-footer__legal" aria-label="${esc(ui("legal_nav"))}">
+            <a class="u-line" href="legal.html">${esc(ui("legal_link"))}</a>
+            <a class="u-line" href="terms.html">${esc(ui("terms_link"))}</a>
+          </nav>
           <a class="u-line" href="#">${esc(ui("back_top"))} ↑</a>
         </div>
       </div>`;
@@ -522,6 +525,32 @@
       </section>`;
   }
 
+  /* ------------------------------------------------------------------
+     PAGES LÉGALES (textes dans data/legal.js)
+     ------------------------------------------------------------------ */
+  // échappe le texte puis rend cliquables les emails et les liens https://
+  const linkify = (s) => esc(s)
+    .replace(/https:\/\/[^\s<]+[^\s<.,;:)]/g, (u) => `<a class="u-line" href="${u}" target="_blank" rel="noopener">${u.replace(/^https:\/\/(www\.)?/, "")}</a>`)
+    .replace(/[\w.+-]+@[\w-]+\.[\w.]+[\w]/g, (m) => `<a class="u-line" href="mailto:${m}">${m}</a>`);
+
+  function renderLegal() {
+    const doc = window.LEGAL && window.LEGAL[page];
+    if (!doc) return renderNotFound();
+    document.title = `${t(doc.title)} — ${SITE.name}`;
+    return `
+      <section class="page-head container">
+        <h1 class="page-head__title page-head__title--small display">${esc(t(doc.title))}</h1>
+        <p class="eyebrow" style="margin-top:1.5rem">${esc(ui("updated"))} — ${esc(t(doc.updated))}</p>
+      </section>
+      <section class="container legal">
+        ${list(doc.sections).map((s, n) => `
+          <div class="legal__section reveal">
+            <h2 class="legal__title"><span class="eyebrow">${pad(n + 1)}</span>${esc(t(s.title))}</h2>
+            <div class="prose">${list(t(s.body)).map((p) => `<p>${linkify(p)}</p>`).join("")}</div>
+          </div>`).join("")}
+      </section>`;
+  }
+
   function renderNotFound() {
     document.title = `404 — ${SITE.name}`;
     return `<section class="container notice"><h1 class="page-head__title display">404</h1><p>${esc(ui("page_404"))}</p><a class="btn" href="index.html">${esc(ui("home"))}</a></section>`;
@@ -546,7 +575,7 @@
   /* ------------------------------------------------------------------
      Rendu global
      ------------------------------------------------------------------ */
-  const renderers = { home: renderHome, work: renderWork, project: renderProject, about: renderAbout, contact: renderContact };
+  const renderers = { home: renderHome, work: renderWork, project: renderProject, about: renderAbout, contact: renderContact, legal: renderLegal, terms: renderLegal };
 
   function renderAll() {
     root.lang = lang;

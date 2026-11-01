@@ -22,6 +22,7 @@ Le reste (mise en page, animations, etc.) se fait tout seul.
 9. [Mettre le site en ligne gratuitement](#9-mettre-le-site-en-ligne-gratuitement)
 10. [Brancher un nom de domaine (plus tard)](#10-brancher-un-nom-de-domaine-plus-tard)
 11. [En cas de problème](#11-en-cas-de-problème)
+12. [Pages légales](#12-pages-légales)
 
 ---
 
@@ -261,12 +262,13 @@ Choisis une couleur assez **lumineuse** pour rester lisible sur le fond sombre. 
 Les autres couleurs (fond, texte, gris) sont juste en dessous, si un jour tu veux les ajuster.
 
 ### Les polices
-Toujours en haut de `css/style.css` :
+Les polices sont **hébergées sur ton site** (dossier `assets/fonts`), et non chargées depuis Google. Ainsi, aucune donnée de tes visiteurs n'est envoyée à un tiers, ce qui t'évite un bandeau de consentement (RGPD).
 
-1. Va sur **fonts.google.com**, choisis une police, clique sur **Get font**, puis sur **Get embed code**.
-2. Copie l'adresse qui commence par `https://fonts.googleapis.com/css2?family=…`
-3. Remplace l'adresse dans la ligne `@import url("…");`. Pour garder plusieurs polices, une seule adresse peut contenir plusieurs `family=` séparés par `&`.
-4. Remplace le nom de la police dans `--font-display` (titres) ou `--font-body` (texte). Exemple : `--font-display: "Playfair Display", serif;`
+Pour changer de police, le plus simple est de me le demander. Si tu veux le faire toi-même :
+1. Va sur **gwfh.mranftl.com/fonts** (google-webfonts-helper, gratuit), cherche la police, coche « latin » et « latin-ext », puis télécharge les fichiers `.woff2`.
+2. Dépose-les dans `assets/fonts/`.
+3. En haut de `css/style.css`, remplace les blocs `@font-face` de l'ancienne police par ceux que fournit le site (en corrigeant le chemin en `../assets/fonts/…`).
+4. Remplace le nom de la police dans `--font-hero`, `--font-display` ou `--font-body`.
 
 Polices actuelles : **Anton** (ton nom sur l'accueil, dans le style du carton de ta démo, réglable avec `--font-hero`), **Bricolage Grotesque** (titres en très gras + texte), **Geist Mono** (petites étiquettes).
 La graisse des titres se règle avec `--display-weight` (de 600, plus léger, à 800, très gras).
@@ -422,3 +424,24 @@ C'est normal en double-cliquant sur `index.html` : utilise Live Server (section 
 
 **Deux projets ouvrent la même page**
 Ils ont le même `slug`. Chaque projet doit avoir un slug unique (la Console F12 te prévient).
+
+---
+
+## 12. Pages légales
+
+Le site comporte deux pages, accessibles depuis le pied de page :
+- **Mentions légales & confidentialité** (`legal.html`) : éditeur, hébergeur (GitHub), registrar (Cloudflare), propriété intellectuelle, et la politique de données personnelles (RGPD).
+- **Conditions d'utilisation** (`terms.html`) : ce que les visiteurs ont le droit de faire avec tes contenus.
+
+Leurs textes, en français et en anglais, sont dans **`data/legal.js`**. Mets à jour la date `updated` quand tu les modifies.
+
+**Pourquoi il n'y a pas de bandeau cookies :** le site ne dépose aucun cookie, n'utilise aucune statistique ni publicité, et les polices comme les vidéos sont hébergées sur le site lui-même. Seul ton choix de langue (EN/FR) est mémorisé dans le navigateur du visiteur, ce qui est exempté de consentement.
+
+**À mettre à jour si tu changes ces points :**
+- Si tu actives le **formulaire Formspree**, ajoute dans la section « Données personnelles » qu'il transmet le nom, l'email et le message à Formspree (formspree.io).
+- Si tu ajoutes des **statistiques** (Google Analytics, etc.) ou des **vidéos YouTube/Vimeo intégrées**, il faudra un bandeau de consentement : demande-moi avant.
+- Si tu deviens **auto-entrepreneur** et utilises le site pour ton activité, les mentions légales devront inclure ton numéro SIRET et une adresse professionnelle.
+
+**Protection contre l'IA :** les mentions légales et la balise `tdm-reservation` présente dans chaque page indiquent que tu t'opposes à l'utilisation de tes images pour entraîner des IA (droit prévu par l'article L.122-5-3 du Code de la propriété intellectuelle).
+
+Ces textes sont un modèle sérieux et adapté à un portfolio personnel, mais ils ne remplacent pas l'avis d'un juriste.
