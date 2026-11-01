@@ -96,7 +96,7 @@ window.SITE = {
     },
     software: ["Maya", "ZBrush", "Substance 3D Painter", "Yeti", "Houdini", "Blender", "Arnold", "Nuke", "DaVinci Resolve"],
     languages: { en: "French (native), English (professional)", fr: "Français (natif), anglais (professionnel)" },
-    cv: "assets/cv/Lorenzo-Brundidia-CV.pdf",
+    cv: "",                                  // "" = pas de bouton CV. Pour l'afficher : "assets/cv/Lorenzo-Brun-Di-Dia-CV.pdf"
   },
 
   /* ---------- Page Contact ----------

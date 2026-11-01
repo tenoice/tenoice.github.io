@@ -293,7 +293,7 @@ Tout est dans `data/site.js`, rangé par section et commenté :
 - Le choix du visiteur est mémorisé par son navigateur.
 
 ### Ton CV et ta photo
-- **CV** : remplace `assets/cv/Lorenzo-Brundidia-CV.pdf` par ton vrai CV, **avec exactement le même nom**. Le fichier actuel est un faux PDF de démonstration.
+- **CV** : le bouton « Download CV » est masqué pour l'instant. Pour l'afficher, dépose ton CV dans `assets/cv/` (par exemple `Lorenzo-Brun-Di-Dia-CV.pdf`), puis dans `data/site.js` écris `cv: "assets/cv/Lorenzo-Brun-Di-Dia-CV.pdf",`
 - **Photo** : dépose `portrait.webp` dans `assets/images/about/`.
 
 ---
