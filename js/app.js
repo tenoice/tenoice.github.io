@@ -508,7 +508,7 @@
     return `
       <section class="page-head container"><h1 class="page-head__title display">${esc(ui("contact_title"))}</h1></section>
       <section class="container contact">
-        <div class="reveal">
+        <div class="contact__main reveal">
           <p class="lead">${esc(t(c.intro))}</p>
           <p class="eyebrow" style="margin-top:3rem">${esc(ui("email"))}</p>
           <a class="contact__mail" href="mailto:${esc(SITE.email)}">${esc(SITE.email)}</a>
