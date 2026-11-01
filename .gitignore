@@ -1,0 +1,5 @@
+# Fichiers qui ne doivent pas être mis en ligne
+.claude/
+Thumbs.db
+desktop.ini
+.DS_Store

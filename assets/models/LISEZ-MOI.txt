@@ -1,0 +1,2 @@
+Dépose ici ton modèle 3D : character.glb (idéalement moins de 15 Mo)
+Puis dans data/site.js mets  type: "model"
