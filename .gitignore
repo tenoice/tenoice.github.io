@@ -1,5 +1,6 @@
 # Fichiers qui ne doivent pas être mis en ligne
 .claude/
+dns-cloudflare.txt
 Thumbs.db
 desktop.ini
 .DS_Store
