@@ -66,7 +66,7 @@ window.PROJECTS = [
     slug: "neytiri",
     title: "Neytiri",
     category: ["Character", "Groom", "Personal"],
-    year: 2026,                               // à vérifier
+    year: 2025,                               // décembre 2025
     featured: true,
     context: { en: "Personal project", fr: "Projet personnel" },
     role: { en: "Sculpt, texturing, groom, compositing", fr: "Sculpt, texturing, groom, compositing" },
@@ -104,7 +104,7 @@ window.PROJECTS = [
     slug: "sinraptor",
     title: "Sinraptor",
     category: ["Character", "Personal"],
-    year: 2026,
+    year: 2026,                               // février 2026
     featured: true,
     context: { en: "Personal project", fr: "Projet personnel" },
     role: { en: "Full pipeline — sculpt, retopo, texturing, rig, animation, environment, render & comp", fr: "Pipeline complet — sculpt, retopo, texturing, rig, animation, environnement, rendu & comp" },
