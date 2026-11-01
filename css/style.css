@@ -409,6 +409,10 @@ figcaption { margin-top: .75rem; }
 .pager a:hover .pager__title { color: var(--accent); }
 .pager a:first-child:hover .pager__title { transform: translateX(-6px); }
 .pager a + a:hover .pager__title { transform: translateX(6px); }
+/* Un seul autre projet : un seul lien « suivant », aligné à droite */
+.pager--single { grid-template-columns: 1fr; }
+.pager--single a { text-align: right; }
+.pager--single a:hover .pager__title { transform: translateX(6px); }
 
 .notice { padding-block: 6rem; }
 .notice p { margin-block: 1rem 2rem; color: var(--muted); }

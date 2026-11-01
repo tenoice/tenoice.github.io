@@ -47,7 +47,7 @@ js/
   lightbox.js       Le plein écran des images (ne pas toucher)
 
 assets/
-  images/projects/  Un sous-dossier par projet (project-01, project-02…)
+  images/projects/  Un sous-dossier par projet (neytiri, sinraptor, demoreel-2026…)
   images/about/     Ta photo
   video/            Ta showreel
   models/           Ton modèle 3D .glb
@@ -216,8 +216,8 @@ Pour le **masquer sans le supprimer**, entoure le bloc de `/*` et `*/`.
 ### Changer l'ordre
 L'ordre dans `projects.js` = l'ordre sur le site (et pour « projet précédent / suivant »). Couper-coller un bloc entier suffit.
 
-### Les 3 projets d'exemple
-`project-01`, `project-02` et `project-03` sont des exemples. Remplace leurs textes et images, ou supprime-les quand tu as tes vrais projets.
+### Des exemples complets
+Les projets d'exemple ont été retirés. Pour t'inspirer, regarde les blocs `neytiri` (avec slider avant/après) et `sinraptor` (avec vidéos et breakdown en 5 étapes) dans `data/projects.js`. Un modèle vide à copier se trouve tout en bas du fichier.
 
 ---
 

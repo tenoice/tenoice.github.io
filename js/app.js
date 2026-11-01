@@ -442,8 +442,8 @@
 
         ${li >= 0 && LISTED.length > 1 ? `
         <nav class="container" aria-label="${esc(ui("prev"))} / ${esc(ui("next"))}">
-          <div class="pager">
-            <a href="${projectUrl(prev)}" rel="prev"><span class="eyebrow">← ${esc(ui("prev"))}</span><span class="pager__title">${esc(t(prev.title))}</span></a>
+          <div class="pager${prev === next ? " pager--single" : ""}">
+            ${prev !== next ? `<a href="${projectUrl(prev)}" rel="prev"><span class="eyebrow">← ${esc(ui("prev"))}</span><span class="pager__title">${esc(t(prev.title))}</span></a>` : ""}
             <a href="${projectUrl(next)}" rel="next"><span class="eyebrow">${esc(ui("next"))} →</span><span class="pager__title">${esc(t(next.title))}</span></a>
           </div>
         </nav>` : ""}

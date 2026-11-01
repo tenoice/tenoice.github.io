@@ -1,8 +1,0 @@
-Dépose ici les images de "Project 01".
-Fichiers attendus (noms écrits dans data/projects.js) :
-  cover.webp      couverture 16:9   (2560 x 1440 conseillé)
-  thumb.webp      vignette 4:5      (1200 x 1500)
-  01.webp ... 04.webp   galerie
-  bd-sculpt.webp, bd-groom.webp, bd-wire.webp, bd-tex.webp   breakdown
-  turntable.mp4   vidéo
-Tant qu'un fichier manque, un placeholder gris s'affiche à sa place.
