@@ -395,6 +395,15 @@ figcaption { margin-top: .75rem; }
 .video { aspect-ratio: 16 / 9; }
 .videos { display: grid; gap: clamp(1rem, 2vw, 2rem); }
 
+/* Vidéo YouTube / Vimeo en attente du clic du visiteur (RGPD) */
+.embed-consent {
+  width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .9rem;
+  padding: 1.5rem; text-align: center; background: radial-gradient(ellipse at 50% 40%, var(--surface-2), var(--surface) 70%);
+}
+.embed-consent__play { font: 500 .8rem/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; padding: 1rem 1.5rem; border: 1px solid var(--text); transition: background .3s, color .3s; }
+.embed-consent:hover .embed-consent__play, .embed-consent:focus-visible .embed-consent__play { background: var(--text); color: var(--bg); }
+.embed-consent__note { max-width: 36ch; font-size: .85rem; color: var(--muted); }
+
 /* Slider avant / après */
 .compare { --pos: 50%; position: relative; overflow: hidden; background: var(--surface); user-select: none; }
 .compare img, .compare .ph { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; aspect-ratio: auto; }
@@ -482,6 +491,8 @@ figcaption { margin-top: .75rem; }
 .field textarea { min-height: 8rem; resize: vertical; }
 .field input:focus, .field textarea:focus { outline: none; border-bottom-color: var(--accent); }
 .form__status { min-height: 1.5em; color: var(--muted); }
+.form__privacy { font-size: .85rem; color: var(--muted); max-width: 60ch; }
+.form__privacy a { color: var(--text); }
 
 /* ---------------------------------------------------------------------
    Lightbox (plein écran)

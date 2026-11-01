@@ -316,7 +316,7 @@ Elle se lit automatiquement, en boucle et en muet, avec un bouton Pause (et ne d
 Vimeo s'intègre plus proprement en « fond vidéo » que YouTube.
 
 ### Un modèle 3D interactif
-1. Exporte ton modèle en **.glb** (glTF binaire), idéalement **moins de 15 Mo**. Depuis Maya, le plus simple est souvent : export FBX → import dans **Blender** (gratuit) → Fichier → Export → glTF 2.0 → format « glTF Binary (.glb) », avec l'option de compression Draco cochée.
+1. Exporte ton modèle en **.glb** (glTF binaire), idéalement **moins de 15 Mo**. Depuis Maya, le plus simple est souvent : export FBX → import dans **Blender** (gratuit) → Fichier → Export → glTF 2.0 → format « glTF Binary (.glb) », avec l'option de compression Draco cochée. Le lecteur 3D et son décodeur Draco sont hébergés sur ton site (`js/vendor`) : n'utilise pas les compressions « KTX2 » ou « Meshopt », qui demanderaient des fichiers supplémentaires.
    *Bon à savoir pour un groom :* les courbes XGen ou Houdini ne passent pas dans un .glb. Il faut les convertir en *hair cards* (bandes de polygones texturées) ou en mesh.
 2. Nomme-le `character.glb` et dépose-le dans `assets/models/`.
 3. Mets `type: "model"`.
@@ -440,7 +440,8 @@ Leurs textes, en français et en anglais, sont dans **`data/legal.js`**. Mets à
 
 **À mettre à jour si tu changes ces points :**
 - Si tu actives le **formulaire Formspree**, ajoute dans la section « Données personnelles » qu'il transmet le nom, l'email et le message à Formspree (formspree.io).
-- Si tu ajoutes des **statistiques** (Google Analytics, etc.) ou des **vidéos YouTube/Vimeo intégrées**, il faudra un bandeau de consentement : demande-moi avant.
+- Les **vidéos YouTube/Vimeo** sont déjà gérées : elles ne se chargent qu'après un clic du visiteur sur « Play video », avec une mention d'information. Aucun bandeau n'est nécessaire.
+- Si tu ajoutes des **statistiques** (Google Analytics, etc.), il faudra un bandeau de consentement : demande-moi avant.
 - Si tu deviens **auto-entrepreneur** et utilises le site pour ton activité, les mentions légales devront inclure ton numéro SIRET et une adresse professionnelle.
 
 **Protection contre l'IA :** les mentions légales et la balise `tdm-reservation` présente dans chaque page indiquent que tu t'opposes à l'utilisation de tes images pour entraîner des IA (droit prévu par l'article L.122-5-3 du Code de la propriété intellectuelle).

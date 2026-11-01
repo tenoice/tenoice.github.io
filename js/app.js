@@ -105,6 +105,14 @@
     return "";
   }
 
+  // RGPD : une vidéo YouTube / Vimeo n'est chargée qu'après un clic du visiteur (aucune donnée envoyée avant)
+  function consentEmbed(src, title) {
+    const provider = /vimeo/.test(src) ? "Vimeo" : "YouTube";
+    return `<button type="button" class="embed-consent" data-embed="${esc(src)}" data-title="${esc(title)}">` +
+      `<span class="embed-consent__play">${esc(ui("embed_play"))}</span>` +
+      `<span class="embed-consent__note">${esc(ui("embed_note").replace("{provider}", provider))}</span></button>`;
+  }
+
   /* ------------------------------------------------------------------
      En-tête et pied de page (communs à toutes les pages)
      ------------------------------------------------------------------ */
@@ -236,7 +244,9 @@
   }
 
   // Showreel : vidéo en boucle, YouTube/Vimeo, ou modèle 3D — placeholder si absent
-  const MODEL_VIEWER_URL = "https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js";
+  // <model-viewer> et son décodeur Draco sont hébergés sur le site (js/vendor) : aucun appel à un serveur tiers (RGPD)
+  const MODEL_VIEWER_URL = "js/vendor/model-viewer.min.js";
+  const localUrl = (p) => new URL(p, location.href).href;
   let modelViewerReady;
 
   function mountShowreel() {
@@ -251,6 +261,12 @@
       if (!r.model) return fail(ui("model_soon"));
       modelViewerReady = modelViewerReady || new Promise((ok, ko) => {
         if (customElements.get("model-viewer")) return ok();
+        // lu par model-viewer au démarrage : remplace ses adresses par défaut (serveurs Google / jsDelivr)
+        window.ModelViewerElement = {
+          dracoDecoderLocation: localUrl("js/vendor/draco/"),
+          ktx2TranscoderLocation: localUrl("js/vendor/basis/"),        // non fourni : évite la compression KTX2
+          lottieLoaderLocation: localUrl("js/vendor/LottieLoader.js"), // non fourni : pas de textures Lottie
+        };
         const s = document.createElement("script");
         s.type = "module"; s.src = MODEL_VIEWER_URL; s.onload = ok; s.onerror = ko;
         document.head.appendChild(s);
@@ -274,7 +290,7 @@
     if (!r.video) return fail(ui("showreel_soon"));
     const embed = embedUrl(r.video, true);
     if (embed) {
-      frame.innerHTML = `<iframe src="${esc(embed)}" title="${esc(t(r.label))}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+      frame.innerHTML = consentEmbed(embed, t(r.label));
       return;
     }
     const v = document.createElement("video");
@@ -325,6 +341,7 @@
           <button class="filter" type="button" data-filter="all" aria-pressed="true">${esc(ui("filter_all"))}<sup>${LISTED.length}</sup></button>
           ${categoryList().map((c) => `<button class="filter" type="button" data-filter="${slugify(c)}" aria-pressed="false">${esc(c)}<sup>${count(c)}</sup></button>`).join("")}
         </div>
+        <h2 class="visually-hidden">${esc(ui("all_projects"))}</h2>
         <ul class="grid" id="work-grid">${LISTED.map((p, i) => card(p, i, false)).join("")}</ul>
       </section>`;
   }
@@ -362,7 +379,7 @@
     const cap = t(v.caption);
     const embed = embedUrl(v.url);
     const inner = embed
-      ? `<iframe src="${esc(embed)}" title="${esc(cap || t(p.title))}" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>`
+      ? consentEmbed(embed, cap || t(p.title))
       : `<video controls playsinline preload="metadata" src="${esc(resolve(v.url, p))}"${v.poster ? ` poster="${esc(resolve(v.poster, p))}"` : ""} data-size="1920x1080" data-label="${esc(ui("placeholder_video"))}" onerror="Portfolio.imgFail(this)"></video>`;
     return `<figure class="reveal"><div class="video frame">${inner}</div>${cap ? `<figcaption class="eyebrow">${esc(cap)}</figcaption>` : ""}</figure>`;
   }
@@ -502,6 +519,7 @@
           <div class="field"><label class="eyebrow" for="f-email">${esc(ui("form_email"))}</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
           <div class="field"><label class="eyebrow" for="f-msg">${esc(ui("form_message"))}</label><textarea id="f-msg" name="message" required></textarea></div>
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
+          <p class="form__privacy">${esc(ui("form_privacy"))} <a class="u-line" href="legal.html">${esc(ui("legal_link"))}</a></p>
           <div class="contact__row"><button class="btn btn--accent" type="submit">${esc(ui("form_send"))} ${ICON.arrow}</button><p class="form__status" role="status"></p></div>
         </form>
       </div>` : "";
@@ -627,6 +645,17 @@
         return { src: im.currentSrc || im.src, alt: im.alt, caption: b.parentElement.querySelector("figcaption")?.textContent || "" };
       });
       return window.Lightbox.open(items, all.indexOf(zoom), { close: ui("close"), prev: ui("prev"), next: ui("next") });
+    }
+
+    const consent = target.closest(".embed-consent");
+    if (consent) {
+      const iframe = document.createElement("iframe");
+      iframe.src = consent.dataset.embed + (consent.dataset.embed.includes("autoplay=1") ? "" : "&autoplay=1");
+      iframe.title = consent.dataset.title;
+      iframe.allow = "autoplay; fullscreen; picture-in-picture";
+      iframe.allowFullscreen = true;
+      consent.replaceWith(iframe);
+      return;
     }
 
     const copy = target.closest("[data-copy]");

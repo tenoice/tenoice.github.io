@@ -72,7 +72,8 @@ window.LEGAL = {
         body: {
           fr: [
             "Responsable du traitement : Lorenzo Brun Di Dia — brundidialorenzo@gmail.com",
-            "Ce site ne propose ni compte, ni formulaire, ni newsletter. Il n'utilise aucun outil de mesure d'audience, aucune publicité et aucun cookie. Les polices et les vidéos sont hébergées sur le site lui-même : aucune donnée n'est envoyée à des services tiers lors de votre visite.",
+            "Ce site ne propose ni compte, ni formulaire, ni newsletter. Il n'utilise aucun outil de mesure d'audience, aucune publicité et aucun cookie. Les polices, les vidéos et les outils d'affichage sont hébergés sur le site lui-même : aucune donnée n'est envoyée à des services tiers lors de votre visite.",
+            "Si une vidéo hébergée sur YouTube ou Vimeo est proposée, elle n'est chargée qu'après un clic de votre part sur « Lire la vidéo » : la plateforme concernée peut alors collecter des données selon sa propre politique de confidentialité. Sans ce clic, aucune connexion n'est établie avec elle.",
             "Votre choix de langue (EN / FR) est mémorisé dans votre navigateur (stockage local) uniquement pour vous éviter de le refaire. Il n'est jamais transmis et vous pouvez l'effacer à tout moment depuis les réglages de votre navigateur. Ce stockage étant strictement nécessaire à une fonction que vous demandez, il ne requiert pas de consentement.",
             "Comme tout hébergeur, GitHub enregistre des données techniques de connexion (dont l'adresse IP) pour assurer la sécurité et le fonctionnement du service. Ces données peuvent être traitées aux États-Unis ; GitHub adhère au Data Privacy Framework UE–États-Unis. Voir sa déclaration de confidentialité : https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement",
             "Si vous m'écrivez par email, votre adresse et votre message servent uniquement à vous répondre. Ils ne sont ni partagés ni utilisés à d'autres fins, et sont conservés au plus le temps de nos échanges.",
@@ -81,7 +82,8 @@ window.LEGAL = {
           ],
           en: [
             "Data controller: Lorenzo Brun Di Dia — brundidialorenzo@gmail.com",
-            "This site offers no account, form or newsletter. It uses no analytics, no advertising and no cookies. Fonts and videos are hosted on the site itself: no data is sent to third-party services when you visit.",
+            "This site offers no account, form or newsletter. It uses no analytics, no advertising and no cookies. Fonts, videos and display tools are hosted on the site itself: no data is sent to third-party services when you visit.",
+            "If a video hosted on YouTube or Vimeo is offered, it is only loaded after you click \"Play video\": the platform may then collect data under its own privacy policy. Without that click, no connection to it is made.",
             "Your language choice (EN / FR) is stored in your browser (local storage) only so you don't have to choose again. It is never transmitted and you can clear it at any time in your browser settings. As this storage is strictly necessary for a feature you request, it does not require consent.",
             "Like any hosting provider, GitHub logs technical connection data (including IP addresses) to ensure the security and operation of the service. This data may be processed in the United States; GitHub participates in the EU–U.S. Data Privacy Framework. See its privacy statement: https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement",
             "If you email me, your address and message are used only to reply to you. They are not shared or used for any other purpose, and are kept no longer than our exchange requires.",
