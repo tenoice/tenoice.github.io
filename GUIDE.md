@@ -216,6 +216,7 @@ Pour le **masquer sans le supprimer**, entoure le bloc de `/*` et `*/`.
 
 ### L'ordre des projets
 Les projets sont **classés automatiquement du plus récent au plus ancien**, sur l'accueil comme dans Work (et pour « projet précédent / suivant »). Le classement se fait d'après le champ `date`, au format année-mois : `date: "2026-02",`. Sans `date`, c'est l'année (`year`) qui compte. L'ordre des blocs dans `projects.js` n'a donc pas d'importance.
+Pour faire descendre un projet en fin de liste malgré sa date, ajoute-lui `order: 1,` (c'est le cas de Sinraptor). Avec `order: 2`, il passe encore après.
 
 ### Des exemples complets
 Les projets d'exemple ont été retirés. Pour t'inspirer, regarde les blocs `neytiri` (avec slider avant/après) et `sinraptor` (avec vidéos et breakdown en 5 étapes) dans `data/projects.js`. Un modèle vide à copier se trouve tout en bas du fichier.

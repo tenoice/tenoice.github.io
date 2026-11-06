@@ -25,9 +25,11 @@
   root.classList.add("js");
 
   // Projets affichés dans les listes (listed: false = page accessible, mais absente de l'accueil et de Work),
-  // classés du plus récent au plus ancien d'après "date" ("2026-02"), ou à défaut "year"
+  // classés du plus récent au plus ancien d'après "date" ("2026-02"), ou à défaut "year".
+  // "order: 1" (ou plus) fait descendre un projet après tous les autres, quelle que soit sa date.
   const sortKey = (p) => String(p.date || p.year || "");
-  const LISTED = PROJECTS.filter((p) => p.listed !== false).sort((a, b) => sortKey(b).localeCompare(sortKey(a)));
+  const LISTED = PROJECTS.filter((p) => p.listed !== false)
+    .sort((a, b) => (a.order || 0) - (b.order || 0) || sortKey(b).localeCompare(sortKey(a)));
 
   /* ------------------------------------------------------------------
      Langue

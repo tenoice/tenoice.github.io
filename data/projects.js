@@ -13,7 +13,8 @@
    • Image manquante ou mal nommée = placeholder gris, jamais de casse.
    • Les projets sont classés automatiquement du plus récent au plus
      ancien, d'après "date" (année-mois, ex. "2026-02"). L'ordre dans
-     ce fichier n'a donc pas d'importance.
+     ce fichier n'a donc pas d'importance. "order: 1" fait passer un
+     projet en fin de liste, quelle que soit sa date.
    • Tout champ optionnel peut être supprimé ou laissé vide.
    ===================================================================== */
 
@@ -108,6 +109,7 @@ window.PROJECTS = [
     category: ["Character", "Personal"],
     year: 2026,
     date: "2026-02",
+    order: 1,                                 // placé en dernier, après Neytiri (malgré sa date plus récente)
     featured: true,
     context: { en: "Personal project", fr: "Projet personnel" },
     role: { en: "Full pipeline — sculpt, retopo, texturing, rig, animation, environment, render & comp", fr: "Pipeline complet — sculpt, retopo, texturing, rig, animation, environnement, rendu & comp" },
