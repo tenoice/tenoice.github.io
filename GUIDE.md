@@ -214,8 +214,8 @@ Pour remplacer une image, garde le même nom de fichier et écrase l'ancienne da
 Sélectionne tout son bloc, de la ligne `{` jusqu'à la ligne `},` incluse, et supprime-le. Tu peux aussi supprimer son dossier d'images.
 Pour le **masquer sans le supprimer**, entoure le bloc de `/*` et `*/`.
 
-### Changer l'ordre
-L'ordre dans `projects.js` = l'ordre sur le site (et pour « projet précédent / suivant »). Couper-coller un bloc entier suffit.
+### L'ordre des projets
+Les projets sont **classés automatiquement du plus récent au plus ancien**, sur l'accueil comme dans Work (et pour « projet précédent / suivant »). Le classement se fait d'après le champ `date`, au format année-mois : `date: "2026-02",`. Sans `date`, c'est l'année (`year`) qui compte. L'ordre des blocs dans `projects.js` n'a donc pas d'importance.
 
 ### Des exemples complets
 Les projets d'exemple ont été retirés. Pour t'inspirer, regarde les blocs `neytiri` (avec slider avant/après) et `sinraptor` (avec vidéos et breakdown en 5 étapes) dans `data/projects.js`. Un modèle vide à copier se trouve tout en bas du fichier.

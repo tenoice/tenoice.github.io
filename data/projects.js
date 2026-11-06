@@ -11,8 +11,9 @@
      dossier du projet. Un chemin complet ("assets/…") ou un lien
      "https://…" fonctionne aussi.
    • Image manquante ou mal nommée = placeholder gris, jamais de casse.
-   • L'ordre des projets ici = l'ordre sur le site (et pour
-     "projet précédent / suivant").
+   • Les projets sont classés automatiquement du plus récent au plus
+     ancien, d'après "date" (année-mois, ex. "2026-02"). L'ordre dans
+     ce fichier n'a donc pas d'importance.
    • Tout champ optionnel peut être supprimé ou laissé vide.
    ===================================================================== */
 
@@ -66,7 +67,8 @@ window.PROJECTS = [
     slug: "neytiri",
     title: "Neytiri",
     category: ["Character", "Groom", "Personal"],
-    year: 2025,                               // décembre 2025
+    year: 2025,
+    date: "2025-12",                          // année-mois : sert à classer les projets (le plus récent en haut)
     featured: true,
     context: { en: "Personal project", fr: "Projet personnel" },
     role: { en: "Sculpt, texturing, groom, compositing", fr: "Sculpt, texturing, groom, compositing" },
@@ -104,7 +106,8 @@ window.PROJECTS = [
     slug: "sinraptor",
     title: "Sinraptor",
     category: ["Character", "Personal"],
-    year: 2026,                               // février 2026
+    year: 2026,
+    date: "2026-02",
     featured: true,
     context: { en: "Personal project", fr: "Projet personnel" },
     role: { en: "Full pipeline — sculpt, retopo, texturing, rig, animation, environment, render & comp", fr: "Pipeline complet — sculpt, retopo, texturing, rig, animation, environnement, rendu & comp" },
@@ -159,6 +162,7 @@ window.PROJECTS = [
     title: "N7-T1.2",
     category: ["Hard Surface"],
     year: 2026,                               // à vérifier
+    date: "2026-11",                          // projet le plus récent (mois à confirmer)
     featured: true,
     // context: "School project — ARTFX",     // à compléter : école ou perso ?
     role: { en: "Concept, modeling, UVs, texturing, lookdev, rendering", fr: "Concept, modélisation, UVs, texturing, lookdev, rendu" },
@@ -214,6 +218,7 @@ window.PROJECTS = [
     title: "Mon nouveau projet",
     category: "Character",
     year: 2026,
+    date: "2026-03",                          // année-mois : le plus récent s'affiche en premier
     featured: false,
     context: "Personal project",
     role: "Character Artist",

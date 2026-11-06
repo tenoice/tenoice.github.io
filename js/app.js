@@ -24,8 +24,10 @@
   }
   root.classList.add("js");
 
-  // Projets affichés dans les listes (listed: false = page accessible, mais absente de l'accueil et de Work)
-  const LISTED = PROJECTS.filter((p) => p.listed !== false);
+  // Projets affichés dans les listes (listed: false = page accessible, mais absente de l'accueil et de Work),
+  // classés du plus récent au plus ancien d'après "date" ("2026-02"), ou à défaut "year"
+  const sortKey = (p) => String(p.date || p.year || "");
+  const LISTED = PROJECTS.filter((p) => p.listed !== false).sort((a, b) => sortKey(b).localeCompare(sortKey(a)));
 
   /* ------------------------------------------------------------------
      Langue
