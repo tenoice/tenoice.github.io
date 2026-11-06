@@ -151,6 +151,58 @@ window.PROJECTS = [
     ],
   },
 
+  /* ------------------------------------------------------------------
+     N7-T1.2 — casque (images extraites de "HELMET PRESENTATION.pdf")
+     ------------------------------------------------------------------ */
+  {
+    slug: "n7-t1-2",
+    title: "N7-T1.2",
+    category: ["Hard Surface"],
+    year: 2026,                               // à vérifier
+    featured: true,
+    // context: "School project — ARTFX",     // à compléter : école ou perso ?
+    role: { en: "Concept, modeling, UVs, texturing, lookdev, rendering", fr: "Concept, modélisation, UVs, texturing, lookdev, rendu" },
+    // software: ["Maya", "ZBrush", "Substance 3D Painter"],   // à compléter
+    description: {
+      en: "A sci-fi helmet, taken from concept to final render.\n\nI gathered helmets with organic, almost insect-like shapes, and technical designs with tubes, respirators and side modules. From the organic references, I kept the fluid volumes and a separate jaw, so the helmet reads as a shell rather than military gear. The technical helmets gave me the round ear module and the rear nozzle. For the palette, I chose an almost fully black base with two turquoise sensors on the forehead and a dark amber visor, finished with a fine mesh texture that echoes the respirator grilles.",
+      fr: "Un casque de science-fiction, mené du concept jusqu'au rendu final.\n\nJ'ai rassemblé des casques aux formes organiques, presque insectoïdes, et des designs techniques avec tubes, respirateurs et modules latéraux. Des références organiques, j'ai gardé les volumes fluides et une mâchoire séparée, pour que le casque se lise comme une carapace plutôt que comme un équipement militaire. Les casques techniques m'ont donné le module d'oreille rond et la buse arrière. Pour la palette, j'ai choisi une base presque entièrement noire, deux capteurs turquoise sur le front et une visière ambre foncé, avec une fine texture de maille qui rappelle les grilles des respirateurs.",
+    },
+    cover: "cover.webp",                      // rendu sur socle
+    thumbnail: "thumb.webp",                  // affiche verticale
+    gallery: [
+      { src: "presentation.webp",     size: "2560x1440", caption: "N7-T1.2 — presentation" },
+      { src: "lights-off-front.webp", size: "1000x1000", half: true, caption: "Lights off" },
+      { src: "lights-off-back.webp",  size: "1000x1000", half: true },
+      { src: "anim-lit.webp",         size: "1280x720",  half: true, caption: "Animated render stills" },
+      { src: "anim-dark.webp",        size: "1280x720",  half: true },
+    ],
+    breakdown: [
+      { title: "Concept", text: { en: "Exploring the line, concept line, then color concept.", fr: "Recherche de silhouette, line de concept, puis concept couleur." },
+        images: [{ src: "bd-concept.webp", size: "2550x860" }] },
+      { title: "Modeling", text: {
+          en: "Between the concept phase and the 3D model, the helmet's appearance evolved: the slit became an amber, wraparound visor; the row of LEDs was replaced by two cyan sensors; the cables vanished, giving way to a smooth shell featuring round ports; and the chin section now retains only its perforated grille.",
+          fr: "Entre la phase de concept et le modèle 3D, l'apparence du casque a évolué : la fente est devenue une visière ambre enveloppante, la rangée de LED a laissé place à deux capteurs cyan, les câbles ont disparu au profit d'une coque lisse percée de ports ronds, et la mentonnière ne garde plus que sa grille perforée." },
+        images: [
+          { src: "bd-wire-front.webp", size: "821x712", half: true },
+          { src: "bd-wire-back.webp",  size: "841x754", half: true },
+        ] },
+      { title: "UVs", text: { en: "UV layout checked with a test pattern.", fr: "Dépliage UV vérifié avec une mire de test." },
+        images: [
+          { src: "bd-uv-1.webp", size: "810x775", half: true },
+          { src: "bd-uv-2.webp", size: "774x691", half: true },
+        ] },
+      { title: "Textures", text: { en: "Four materials: the main mesh shell, the secondary surfaces, cables & caps, and the amber glass of the visor.", fr: "Quatre matériaux : la coque principale maillée, les surfaces secondaires, les câbles et embouts, et le verre ambre de la visière." },
+        images: [
+          { src: "bd-mat-main.webp",      size: "900x900", half: true, caption: "Main" },
+          { src: "bd-mat-secondary.webp", size: "900x900", half: true, caption: "Secondary" },
+          { src: "bd-mat-cables.webp",    size: "900x900", half: true, caption: "Cables / Caps" },
+          { src: "bd-mat-glass.webp",     size: "900x900", half: true, caption: "Glass" },
+        ] },
+      { title: "Visor", text: { en: "Drag the line: with visor on the left, without on the right.", fr: "Fais glisser la ligne : avec visière à gauche, sans visière à droite." },
+        compare: { before: "render-no-visor.webp", after: "render-visor.webp", size: "2560x1440" } },
+    ],
+  },
+
   /* ==================================================================
      MODÈLE VIDE À COPIER
      Il est désactivé car il se trouve à l'intérieur de ce commentaire.
