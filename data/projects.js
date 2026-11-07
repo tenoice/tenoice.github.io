@@ -178,7 +178,7 @@ window.PROJECTS = [
     gallery: [
       { src: "presentation.webp",     size: "2560x1440", caption: "N7-T1.2 — presentation" },
       { src: "lights-off-front.webp", size: "1000x1000", half: true, caption: "Lights off" },
-      { src: "lights-off-back.webp",  size: "1000x1000", half: true },
+      { src: "lights-off-rear.webp",  size: "1000x1000", half: true },
       { src: "anim-lit.webp",         size: "1280x720",  half: true, caption: "Animated render stills" },
       { src: "anim-dark.webp",        size: "1280x720",  half: true },
     ],
